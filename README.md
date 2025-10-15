@@ -18,6 +18,11 @@ A modern, user-friendly desktop application for converting images between differ
 
 No Python installation required - just download and run!
 
+> **⚠️ Security Warning Notice**: Your browser or Windows may show security warnings because this app isn't code-signed (code signing certificates cost $100-400/year). This is normal for free open-source software. The source code is fully available for review in this repository. If you see warnings:
+> - **Windows/Browser**: Click "Keep" or "Download anyway" 
+> - **macOS**: Right-click the app → "Open" (first time only)
+> - **Linux**: Run `chmod +x ImageFormatConverter-Linux` to make it executable
+
 ## Features
 
 - **Multiple Format Support**: Convert between JPEG, PNG, BMP, TIFF, WEBP, and GIF
