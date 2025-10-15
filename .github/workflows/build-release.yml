@@ -1,0 +1,105 @@
+name: Build and Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build Windows executable
+        run: pyinstaller ImageFormatConverter.spec
+      
+      - name: Upload Windows executable
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./dist/ImageFormatConverter.exe
+          asset_name: ImageFormatConverter-Windows.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build macOS executable
+        run: pyinstaller ImageFormatConverter.spec
+      
+      - name: Create DMG
+        run: |
+          mkdir -p dist/ImageFormatConverter.app/Contents/MacOS
+          cp -r dist/ImageFormatConverter dist/ImageFormatConverter.app/Contents/MacOS/
+          hdiutil create -volname ImageFormatConverter -srcfolder dist/ImageFormatConverter.app -ov -format UDZO dist/ImageFormatConverter-macOS.dmg
+      
+      - name: Upload macOS DMG
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./dist/ImageFormatConverter-macOS.dmg
+          asset_name: ImageFormatConverter-macOS.dmg
+          asset_content_type: application/x-apple-diskimage
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build Linux executable
+        run: pyinstaller ImageFormatConverter.spec
+      
+      - name: Create tarball
+        run: |
+          cd dist
+          tar -czf ImageFormatConverter-Linux.tar.gz ImageFormatConverter
+      
+      - name: Upload Linux tarball
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./dist/ImageFormatConverter-Linux.tar.gz
+          asset_name: ImageFormatConverter-Linux.tar.gz
+          asset_content_type: application/gzip
+
