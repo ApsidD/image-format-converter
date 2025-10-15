@@ -23,6 +23,24 @@ No Python installation required!
 > - **macOS**: Open the DMG → Drag to Applications → Right-click → "Open" (first time only)
 > - **Linux**: Extract the archive → Run `chmod +x ImageFormatConverter-Linux` → Execute
 
+---
+
+## 💖 Support This Project
+
+If you find this app useful, consider supporting its development!
+
+[![Donate with PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://paypal.me/Apsiddlink)
+
+Your support helps:
+- 🔐 Purchase a code signing certificate ($200-400/year) to remove security warnings
+- ⏰ Dedicate more time to adding new features
+- 🐛 Maintain and improve the software
+- 📦 Keep the project free and open-source
+
+**Every contribution is appreciated!** ☕
+
+---
+
 ## Features
 
 - **Multiple Format Support**: Convert between JPEG, PNG, BMP, TIFF, WEBP, and GIF
