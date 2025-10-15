@@ -2,7 +2,7 @@
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/yourusername/image-format-converter/releases)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](https://github.com/ApsidD/image-format-converter/releases)
 
 A modern, user-friendly desktop application for converting images between different formats with ease.
 
@@ -10,7 +10,7 @@ A modern, user-friendly desktop application for converting images between differ
 
 ## 📥 Download
 
-**[Download the latest release for your platform](https://github.com/yourusername/image-format-converter/releases/latest)**
+**[Download the latest release for your platform](https://github.com/ApsidD/image-format-converter/releases/latest)**
 
 - 🪟 **Windows**: `ImageFormatConverter-Windows.exe`
 - 🍎 **macOS**: `ImageFormatConverter-macOS.dmg`
@@ -144,7 +144,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🐛 Bug Reports
 
-Found a bug? Please [open an issue](https://github.com/yourusername/image-format-converter/issues) with:
+Found a bug? Please [open an issue](https://github.com/ApsidD/image-format-converter/issues) with:
 - Description of the bug
 - Steps to reproduce
 - Expected behavior
