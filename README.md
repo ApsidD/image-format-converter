@@ -12,16 +12,16 @@ A modern, user-friendly desktop application for converting images between differ
 
 **[Download the latest release for your platform](https://github.com/ApsidD/image-format-converter/releases/latest)**
 
-- 🪟 **Windows**: `ImageFormatConverter-Windows.exe`
-- 🍎 **macOS**: `ImageFormatConverter-macOS.dmg`
-- 🐧 **Linux**: `ImageFormatConverter-Linux.tar.gz`
+- 🪟 **Windows**: `ImageFormatConverter-Setup.exe` (Installer)
+- 🍎 **macOS**: `ImageFormatConverter-macOS.dmg` (Disk Image)
+- 🐧 **Linux**: `ImageFormatConverter-Linux.tar.gz` (Archive)
 
-No Python installation required - just download and run!
+No Python installation required!
 
 > **⚠️ Security Warning Notice**: Your browser or Windows may show security warnings because this app isn't code-signed (code signing certificates cost $100-400/year). This is normal for free open-source software. The source code is fully available for review in this repository. If you see warnings:
-> - **Windows/Browser**: Click "Keep" or "Download anyway" 
-> - **macOS**: Right-click the app → "Open" (first time only)
-> - **Linux**: Run `chmod +x ImageFormatConverter-Linux` to make it executable
+> - **Windows**: Click "Keep" → Run the installer → Follow the setup wizard
+> - **macOS**: Open the DMG → Drag to Applications → Right-click → "Open" (first time only)
+> - **Linux**: Extract the archive → Run `chmod +x ImageFormatConverter-Linux` → Execute
 
 ## Features
 

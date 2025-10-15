@@ -27,14 +27,22 @@ jobs:
       - name: Build Windows executable
         run: pyinstaller ImageFormatConverter.spec
       
-      - name: Upload Windows executable
+      - name: Install Inno Setup
+        run: |
+          choco install innosetup -y
+      
+      - name: Create installer with Inno Setup
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
+      
+      - name: Upload Windows installer
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./dist/ImageFormatConverter.exe
-          asset_name: ImageFormatConverter-Windows.exe
+          asset_path: ./dist/ImageFormatConverter-Setup.exe
+          asset_name: ImageFormatConverter-Setup.exe
           asset_content_type: application/vnd.microsoft.portable-executable
 
   build-macos:
